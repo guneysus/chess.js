@@ -25,14 +25,6 @@ $EvenSelectedBG: $TanExtraLight
 *
     font-family: Arial, Helvetica, sans-serif
 
-*:before
-    content: attr(class)
-    float: right
-    font-size: 64% 
-    border-bottom: thin solid rgba(255, 165, 0, 1.0 )
-    background-color: rgba(200, 165, 0, 0.2)
-    padding: 0 
-    margin: 0
 
 body
     background-color: $Tan
@@ -59,7 +51,6 @@ body
 
 
 input[type=button]
-
     vertical-align: top
     box-shadow: inset 0px 0px 10px 4px rgba(105, 90, 70, 0.15)
     font: 100%/1.0 monospace
@@ -69,6 +60,12 @@ input[type=button]
     height: $CellWidth
     text-align: center
     border: 0px
+
+    &:hover
+        background-color: rgba(255, 0,0,0.3)!important
+
+    &:focus
+        background-color: rgba(0, 255,0,0.3)!important
 
 .moves
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAFoEvQfAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wMbFxkJFLEKXQAAAA1JREFUCNdjKLz5VwcABnoCdAk8TH0AAAAASUVORK5CYII=")
@@ -85,30 +82,29 @@ input[type=button]
 .bluedot
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAp0lEQVR42mNggAINDY0oVXWV1UD6DIjWVFMLZEACzKqqqksNw0v+WzTs+G876SqYNgjK/a+mpjYTZkKaSWz9f6fV/zGwQXj5fxUVlVgGVXXVA7Y9p7Aqsu48/l9dXX0vyKSH9nOfYVVkN/P+f6BTbhNnEshOw4gyrIqMQvL/KyoqhoAdD/TFfLDvmveCfWfVtAvsO6Ap05CDARxOQMGNoHACalqHHE4AyV+QhNXOr1MAAAAASUVORK5CYII=") no-repeat center
 
-hr
-    border: 1px dashed gray
-
 
 input[type=button].odd
+    @extends: input[type=button]
     background-color: $OddBG
 
 input[type=button].odd.selected
+    @extends: input[type=button]
+
     background-color: $OddSelectedBG
     color: black
 
 input[type=button].even
+    @extends: input[type=button]
+
     background-color: $EvenBG
 
 input[type=button].even.selected
+    @extends: input[type=button]
+
     background-color: $EvenSelectedBG
+
     color: black
 
 input[type=radio] + span
     font-size: 50px
     color: black
-
-.selected_blue
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMovPm3DgAGzALG7XSWygAAAABJRU5ErkJggg==")
-
-.selected_green, .selected
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOY8X/GdAAHKQLHWT/FfgAAAABJRU5ErkJggg==")

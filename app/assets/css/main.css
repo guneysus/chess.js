@@ -1,15 +1,6 @@
 * {
   font-family: Arial, Helvetica, sans-serif; }
 
-*:before {
-  content: attr(class);
-  float: right;
-  font-size: 64%;
-  border-bottom: thin solid orange;
-  background-color: rgba(200, 165, 0, 0.2);
-  padding: 0;
-  margin: 0; }
-
 body {
   background-color: #D2B48C; }
 
@@ -41,6 +32,10 @@ input[type=button] {
   height: 60px;
   text-align: center;
   border: 0px; }
+  input[type=button]:hover {
+    background-color: rgba(255, 0, 0, 0.3) !important; }
+  input[type=button]:focus {
+    background-color: rgba(0, 255, 0, 0.3) !important; }
 
 .moves {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAFoEvQfAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wMbFxkJFLEKXQAAAA1JREFUCNdjKLz5VwcABnoCdAk8TH0AAAAASUVORK5CYII="); }
@@ -57,31 +52,26 @@ input[type=button] {
 .bluedot {
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAp0lEQVR42mNggAINDY0oVXWV1UD6DIjWVFMLZEACzKqqqksNw0v+WzTs+G876SqYNgjK/a+mpjYTZkKaSWz9f6fV/zGwQXj5fxUVlVgGVXXVA7Y9p7Aqsu48/l9dXX0vyKSH9nOfYVVkN/P+f6BTbhNnEshOw4gyrIqMQvL/KyoqhoAdD/TFfLDvmveCfWfVtAvsO6Ap05CDARxOQMGNoHACalqHHE4AyV+QhNXOr1MAAAAASUVORK5CYII=") no-repeat center; }
 
-hr {
-  border: 1px dashed gray; }
-
 input[type=button].odd {
+  @extends: input[type=button];
   background-color: #BDA27E; }
 
 input[type=button].odd.selected {
+  @extends: input[type=button];
   background-color: #695A46;
   color: black; }
 
 input[type=button].even {
+  @extends: input[type=button];
   background-color: #E8DAC6; }
 
 input[type=button].even.selected {
+  @extends: input[type=button];
   background-color: #F6F0E8;
   color: black; }
 
 input[type=radio] + span {
   font-size: 50px;
   color: black; }
-
-.selected_blue {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMovPm3DgAGzALG7XSWygAAAABJRU5ErkJggg=="); }
-
-.selected_green, .selected {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOY8X/GdAAHKQLHWT/FfgAAAABJRU5ErkJggg=="); }
 
 /*# sourceMappingURL=main.css.map */
