@@ -16,15 +16,14 @@ $TanLight: #E8DAC6
 $TanExtraDark: #695A46
 $TanExtraLight: #F6F0E8
 
-$OddBG: $TanDark
-$EvenBG: $TanLight
+$EvenBG: $TanDark
+$OddBG: $TanLight
 
-$OddSelectedBG: $TanExtraDark
-$EvenSelectedBG: $TanExtraLight
+$EvenSelectedBG: $TanExtraDark
+$OddSelectedBG: $TanExtraLight
 
 *
     font-family: Arial, Helvetica, sans-serif
-
 
 body
     background-color: $Tan
@@ -38,9 +37,10 @@ body
     border: 3px solid rgba(16, 16, 16, 0.6)
     width: 8 * $CellWidth
     height: 8 * $CellWidth
-    padding: 0!important
+    padding: 0 !important
     box-shadow: 0px 2px 28px 17px rgba(105, 90, 70, 0.5)
     margin: 50px auto
+
     // margin: (-50px) auto
     transform: perspective(1000px) rotate3d(1, 0, 0, 30deg) rotate3d(0, 1, 0, 0deg) rotate3d(0, 0, 1, 0deg)
 
@@ -49,23 +49,22 @@ body
         padding: 0
         height: $CellWidth
 
-
 input[type=button]
     vertical-align: top
     box-shadow: inset 0px 0px 10px 4px rgba(105, 90, 70, 0.15)
-    font: 100%/1.0 monospace
+    font: 100% / 1 monospace
     padding: 0
     margin: 0
     width: $CellWidth
     height: $CellWidth
     text-align: center
     border: 0px
-
+    color: #444
     &:hover
-        background-color: rgba(255, 0,0,0.3)!important
+        background-color: rgba(200, 20, 0, 0.25) !important
 
     &:focus
-        background-color: rgba(0, 255,0,0.3)!important
+        background-color: rgba(0, 200, 0, 0.25) !important
 
 .moves
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAFoEvQfAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wMbFxkJFLEKXQAAAA1JREFUCNdjKLz5VwcABnoCdAk8TH0AAAAASUVORK5CYII=")
@@ -82,17 +81,6 @@ input[type=button]
 .bluedot
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAp0lEQVR42mNggAINDY0oVXWV1UD6DIjWVFMLZEACzKqqqksNw0v+WzTs+G876SqYNgjK/a+mpjYTZkKaSWz9f6fV/zGwQXj5fxUVlVgGVXXVA7Y9p7Aqsu48/l9dXX0vyKSH9nOfYVVkN/P+f6BTbhNnEshOw4gyrIqMQvL/KyoqhoAdD/TFfLDvmveCfWfVtAvsO6Ap05CDARxOQMGNoHACalqHHE4AyV+QhNXOr1MAAAAASUVORK5CYII=") no-repeat center
 
-
-input[type=button].odd
-    @extends: input[type=button]
-    background-color: $OddBG
-
-input[type=button].odd.selected
-    @extends: input[type=button]
-
-    background-color: $OddSelectedBG
-    color: black
-
 input[type=button].even
     @extends: input[type=button]
 
@@ -102,7 +90,17 @@ input[type=button].even.selected
     @extends: input[type=button]
 
     background-color: $EvenSelectedBG
+    color: black
 
+input[type=button].odd
+    @extends: input[type=button]
+
+    background-color: $OddBG
+
+input[type=button].odd.selected
+    @extends: input[type=button]
+
+    background-color: $OddSelectedBG
     color: black
 
 input[type=radio] + span

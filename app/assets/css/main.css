@@ -31,11 +31,12 @@ input[type=button] {
   width: 60px;
   height: 60px;
   text-align: center;
-  border: 0px; }
+  border: 0px;
+  color: #444; }
   input[type=button]:hover {
-    background-color: rgba(255, 0, 0, 0.3) !important; }
+    background-color: rgba(200, 20, 0, 0.25) !important; }
   input[type=button]:focus {
-    background-color: rgba(0, 255, 0, 0.3) !important; }
+    background-color: rgba(0, 200, 0, 0.25) !important; }
 
 .moves {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAFoEvQfAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wMbFxkJFLEKXQAAAA1JREFUCNdjKLz5VwcABnoCdAk8TH0AAAAASUVORK5CYII="); }
@@ -52,20 +53,20 @@ input[type=button] {
 .bluedot {
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAp0lEQVR42mNggAINDY0oVXWV1UD6DIjWVFMLZEACzKqqqksNw0v+WzTs+G876SqYNgjK/a+mpjYTZkKaSWz9f6fV/zGwQXj5fxUVlVgGVXXVA7Y9p7Aqsu48/l9dXX0vyKSH9nOfYVVkN/P+f6BTbhNnEshOw4gyrIqMQvL/KyoqhoAdD/TFfLDvmveCfWfVtAvsO6Ap05CDARxOQMGNoHACalqHHE4AyV+QhNXOr1MAAAAASUVORK5CYII=") no-repeat center; }
 
-input[type=button].odd {
+input[type=button].even {
   @extends: input[type=button];
   background-color: #BDA27E; }
 
-input[type=button].odd.selected {
+input[type=button].even.selected {
   @extends: input[type=button];
   background-color: #695A46;
   color: black; }
 
-input[type=button].even {
+input[type=button].odd {
   @extends: input[type=button];
   background-color: #E8DAC6; }
 
-input[type=button].even.selected {
+input[type=button].odd.selected {
   @extends: input[type=button];
   background-color: #F6F0E8;
   color: black; }
