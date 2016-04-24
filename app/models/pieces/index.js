@@ -1,4 +1,7 @@
-import {Piece} from "../board";
+import {
+	Piece
+}
+from "../board";
 
 export
 class King extends Piece {
