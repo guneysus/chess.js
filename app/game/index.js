@@ -6,12 +6,6 @@ import {
 from "models/board";
 
 export
-var White = board.White;
-export
-var Black = board.Black;
-
-
-export
 class Set {
 	constructor(args) {
 		this.White = [
@@ -53,6 +47,3 @@ class Set {
 		]
 	}
 }
-
-console.table(White);
-console.table(Black);
