@@ -14,25 +14,10 @@ window.addEventListener('load', () => {
 		var i = letters.indexOf(c);
 
 		el.addEventListener('click', function(e) {
-			console.log(this.id);
-			console.log([i, parseInt(j) - 1])
+			console.log(this.id, [i, parseInt(j) - 1])
 		});
 
 		el.setAttribute('value', el.id.toUpperCase());
 
 	});
 });
-
-
-import * as pieces from "models/pieces";
-
-import {
-	Knight
-}
-from "models/pieces";
-
-console.dir(Knight)
-
-var knight = new Knight();
-
-console.dir(knight)
