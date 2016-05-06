@@ -1,10 +1,21 @@
 
-default: serve sync
-	
-serve:
-	@brunch w --server&
+default: run
 
-sync:
-	@browser-sync start --proxy "http://0.0.0.0:3333" --files "public/*.*"&
+run:
+	@npm run start
 
-.PHONY: serve sync
+prod:
+	@npm run prod
+
+watch:
+	@brunch watch --server --production
+
+live:
+	@brunch w --server --production
+
+deploy: prod
+	@cd public/ && \
+		git add . --all; \
+		git commit -m "`date`"; \
+		git push
+.PHONY: default run prod watch live deploy

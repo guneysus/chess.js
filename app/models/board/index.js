@@ -34,6 +34,8 @@ const PIECE = {
   Bishop: Symbol('Bishop')
 }
 
+
+
 export
 class Piece {
   constructor(args) {
@@ -115,8 +117,8 @@ const Set = {
 class Cell {
   constructor(args) {
 
-    this.rows = [1, 2, 3, 4, 5, 6, 7, 8];
-    this.cols = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+    this.rows = ROWS;
+    this.cols = COLUMNS;
     this.i = parseInt(args.i);
     this.j = parseInt(args.j);
     this.piece = args.piece;
@@ -137,6 +139,10 @@ class Cell {
   }
 
 }
+
+
+const ROWS = [1, 2, 3, 4, 5, 6, 7, 8];
+const COLUMNS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
 
 export
 class Board {
@@ -185,8 +191,8 @@ class Board {
 
 */
   constructor(args) {
-    this.rows = [1, 2, 3, 4, 5, 6, 7, 8];
-    this.cols = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+    this.rows = ROWS;
+    this.cols = COLUMNS;
     this.colors = ['White', 'Black'];
     this.grid = {};
     this.createGrid();
@@ -200,7 +206,7 @@ class Board {
 
   getRow(index) {
     var cells = [];
-    for (var i = 0; i < this.cols.length; i++) {
+    for (let i = 0; i < this.cols.length; i++) {
       var col = this.cols[i];
       var coord = col + index
       cells.push(this.getCell(coord));
@@ -217,7 +223,7 @@ class Board {
   }
 
   createGrid() {
-    for (var j in this.cols) {
+    for (let j in this.cols) {
       this.grid[this.cols[j]] = {};
       for (var i in this.rows) {
 
@@ -235,7 +241,7 @@ class Board {
 
   layoutPieces() {
     // Pawns
-    for (var i = 0; i < 2; i++) {
+    for (let i = 0; i < 2; i++) {
       for (var ci in this.cols) {
         var rows = ['2', '7'];
         var coord = this.cols[ci] + rows[i];
@@ -245,11 +251,11 @@ class Board {
     }
 
     // Rooks
-    for (var i = 0; i < 2; i++) {
+    for (let i = 0; i < 2; i++) {
       var rows = ['1', '8'];
       var cols = ['a', 'h'];
 
-      for (var ci in cols) {
+      for (let ci in cols) {
         var coord = cols[ci] + rows[i];
         var piece = Object.assign({}, Set[this.colors[i]]['Rook']);
         this.setPieceCoord(piece, coord);
@@ -257,11 +263,11 @@ class Board {
     }
 
     // Knights
-    for (var i = 0; i < 2; i++) {
+    for (let i = 0; i < 2; i++) {
       var rows = ['1', '8'];
       var cols = ['b', 'g'];
 
-      for (var ci in cols) {
+      for (let ci in cols) {
         var coord = cols[ci] + rows[i];
         var piece = Object.assign({}, Set[this.colors[i]]['Knight']);
         this.setPieceCoord(piece, coord);
@@ -270,11 +276,11 @@ class Board {
 
 
     // Bishops
-    for (var i = 0; i < 2; i++) {
+    for (let i = 0; i < 2; i++) {
       var rows = ['1', '8'];
       var cols = ['c', 'f'];
 
-      for (var ci in cols) {
+      for (let ci in cols) {
         var coord = cols[ci] + rows[i];
         var piece = Object.assign({}, Set[this.colors[i]]['Bishop']);
         this.setPieceCoord(piece, coord);
@@ -283,7 +289,7 @@ class Board {
 
 
     // Queens
-    for (var i = 0; i < 2; i++) {
+    for (let i = 0; i < 2; i++) {
       var rows = ['1', '8'];
       var cols = ['d'];
 
@@ -296,7 +302,7 @@ class Board {
 
 
     // King
-    for (var i = 0; i < 2; i++) {
+    for (let i = 0; i < 2; i++) {
       var rows = ['1', '8'];
       var cols = ['e'];
 
