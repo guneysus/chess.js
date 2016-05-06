@@ -3,7 +3,6 @@ const COLOR = {
   Black: Symbol('Black')
 }
 
-
 const ICON = {
   White: {
     King: '♔',
@@ -45,6 +44,7 @@ class Piece {
   }
 }
 
+export
 const Set = {
   White: {
     King: new Piece({
@@ -114,9 +114,9 @@ const Set = {
   }
 }
 
+export
 class Cell {
   constructor(args) {
-
     this.rows = ROWS;
     this.cols = COLUMNS;
     this.i = parseInt(args.i);
@@ -140,9 +140,41 @@ class Cell {
 
 }
 
-
+export
 const ROWS = [1, 2, 3, 4, 5, 6, 7, 8];
+
+export
 const COLUMNS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+
+export
+const LAYOUT = {
+  Pawn: {
+    White: ["a2", "b2", "c2", "d2", "e2", "f2", "g2", "h2"],
+    Black: ["a7", "b7", "c7", "d7", "e7", "f7", "g7", "h7"],
+  },
+  Rook: {
+    White: ["a1", "h1"],
+    Black: ["a8", "h8"],
+  },
+  King: {
+    White: ["e1"],
+    Black: ["e8"]
+  },
+  Queen: {
+    White: ["d1"],
+    Black: ["d8"]
+  },
+
+  Knight: {
+    White: ["b1", "g1"],
+    Black: ["b8", "g8"]
+  },
+  Bishop: {
+    White: ["c1", "f1"],
+    Black: ["c8", "f8"]
+  },
+
+};
 
 export
 class Board {
@@ -191,9 +223,6 @@ class Board {
 
 */
   constructor(args) {
-    this.rows = ROWS;
-    this.cols = COLUMNS;
-    this.colors = ['White', 'Black'];
     this.grid = {};
     this.createGrid();
     this.layoutPieces();
@@ -223,9 +252,9 @@ class Board {
   }
 
   createGrid() {
-    for (let j in this.cols) {
-      this.grid[this.cols[j]] = {};
-      for (var i in this.rows) {
+    for (let j in COLUMNS) {
+      this.grid[COLUMNS[j]] = {};
+      for (var i in ROWS) {
 
         var cell = new Cell({
           i: i,
@@ -233,7 +262,7 @@ class Board {
           piece: null
         });
 
-        this.grid[this.cols[j]][this.rows[i]] = cell;
+        this.grid[COLUMNS[j]][ROWS[i]] = cell;
       }
 
     }
@@ -241,76 +270,22 @@ class Board {
 
   layoutPieces() {
     // Pawns
-    for (let i = 0; i < 2; i++) {
-      for (var ci in this.cols) {
-        var rows = ['2', '7'];
-        var coord = this.cols[ci] + rows[i];
-        var piece = Object.assign({}, Set[this.colors[i]]['Pawn']);
+    for (let color in COLOR) { // White, Black
+      for (let coord of LAYOUT['Pawn'][color]) {
+        var piece = Object.assign({}, Set[color]['Pawn']);
         this.setPieceCoord(piece, coord);
       }
     }
 
-    // Rooks
-    for (let i = 0; i < 2; i++) {
-      var rows = ['1', '8'];
-      var cols = ['a', 'h'];
-
-      for (let ci in cols) {
-        var coord = cols[ci] + rows[i];
-        var piece = Object.assign({}, Set[this.colors[i]]['Rook']);
-        this.setPieceCoord(piece, coord);
+    // Other pieces
+    for (let p in PIECE) {
+      for (let color in COLOR) {
+        for (let coord of LAYOUT[p][color]) {
+          var piece = Object.assign({}, Set[color][p]);
+          this.setPieceCoord(piece, coord);
+        }
       }
     }
 
-    // Knights
-    for (let i = 0; i < 2; i++) {
-      var rows = ['1', '8'];
-      var cols = ['b', 'g'];
-
-      for (let ci in cols) {
-        var coord = cols[ci] + rows[i];
-        var piece = Object.assign({}, Set[this.colors[i]]['Knight']);
-        this.setPieceCoord(piece, coord);
-      }
-    }
-
-
-    // Bishops
-    for (let i = 0; i < 2; i++) {
-      var rows = ['1', '8'];
-      var cols = ['c', 'f'];
-
-      for (let ci in cols) {
-        var coord = cols[ci] + rows[i];
-        var piece = Object.assign({}, Set[this.colors[i]]['Bishop']);
-        this.setPieceCoord(piece, coord);
-      }
-    }
-
-
-    // Queens
-    for (let i = 0; i < 2; i++) {
-      var rows = ['1', '8'];
-      var cols = ['d'];
-
-      for (var ci in cols) {
-        var coord = cols[ci] + rows[i];
-        var piece = Object.assign({}, Set[this.colors[i]]['Queen']);
-        this.setPieceCoord(piece, coord);
-      }
-    }
-
-
-    // King
-    for (let i = 0; i < 2; i++) {
-      var rows = ['1', '8'];
-      var cols = ['e'];
-
-      for (var ci in cols) {
-        var coord = cols[ci] + rows[i];
-        var piece = Object.assign({}, Set[this.colors[i]]['King']);
-        this.setPieceCoord(piece, coord);
-      }
-    }
   };
 }
