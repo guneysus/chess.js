@@ -22,6 +22,7 @@ body {
     height: 60px;
 }
 
+
 input[type=button] {
     vertical-align: top;
     box-shadow: inset 0px 0px 10px 4px rgba(105, 90, 70, 0.15);
