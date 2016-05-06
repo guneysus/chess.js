@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Chess';
+    src: url("/assets/fonts/CHEQ_TT.TTF") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ChessMedium';
+    src: url("/assets/fonts/chess/dd244e4b50bb954610bc0b2372ce2e18/f0366b5a244fa336421c9456a84be46a/ChessMedium.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}

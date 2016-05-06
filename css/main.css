@@ -1,79 +1,78 @@
 * {
-  font-family: Arial, Helvetica, sans-serif; }
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 body {
-  background-color: #D2B48C; }
+    background-color: #D2B48C;
+}
 
-#tasSecim {
-  width: 480px;
-  margin: 0 auto; }
+#board {
+    display: flex;
+    border: 3px solid rgba(16, 16, 16, 0.6);
+    width: 480px;
+    height: 480px;
+    padding: 0 !important;
+    box-shadow: 0px 2px 28px 17px rgba(105, 90, 70, 0.5);
+    margin: 50px auto;    
+}
 
-#alan {
-  display: flex;
-  border: 3px solid rgba(16, 16, 16, 0.6);
-  width: 480px;
-  height: 480px;
-  padding: 0 !important;
-  box-shadow: 0px 2px 28px 17px rgba(105, 90, 70, 0.5);
-  margin: 50px auto;
-  transform: perspective(1000px) rotate3d(1, 0, 0, 30deg) rotate3d(0, 1, 0, 0deg) rotate3d(0, 0, 1, 0deg); }
-  #alan div {
+#board div {
     margin: 0;
     padding: 0;
-    height: 60px; }
+    height: 60px;
+}
 
 input[type=button] {
-  vertical-align: top;
-  box-shadow: inset 0px 0px 10px 4px rgba(105, 90, 70, 0.15);
-  font: 60px monospace;
-  line-height: 1em;
-  padding: 0;
-  margin: 0;
-  width: 60px;
-  height: 60px;
-  text-align: center;
-  border: 0px;
-  color: #444; }
-  input[type=button]:hover {
-    background-color: rgba(200, 20, 0, 0.25) !important; }
-  input[type=button]:focus {
-    background-color: rgba(0, 200, 0, 0.25) !important; }
+    vertical-align: top;
+    box-shadow: inset 0px 0px 10px 4px rgba(105, 90, 70, 0.15);
+    font: 60px "Chess";
+    line-height: 1em;
+    padding: 0;
+    margin: 0;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border: 0px;
+    color: #444;
+}
 
-.moves {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAFoEvQfAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wMbFxkJFLEKXQAAAA1JREFUCNdjKLz5VwcABnoCdAk8TH0AAAAASUVORK5CYII="); }
+input[type=button]:hover {
+    /*background-color: rgba(200, 20, 0, 0.05) !important;*/
+}
 
-.greendot {
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAnUlEQVR42mNggAJVVdUoVRWV1UD6DIhWU1MLZEACzMrKykttw3X/BzYb/4+aZg6mrYJ0/gM1zISZkOYQp/8/baM1BraJ0PmvoqISywA0+kB4vzlWRWG9Zv+B1u4FmfQwYaElVkVxcy1AJt0mziSQnbYRutjdFKL3X1FRMQTm+Pkg3wW1QXwX3GoK89005GCAhJOq6kZwOKmqrkMOJwADyXm2Tc33VQAAAABJRU5ErkJggg==") no-repeat center; }
-
-.reddot, .opponent {
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAMAAADXT/YiAAAAY1BMVEUmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiZrQUF1RUVzRUW4YGDUbGzHZ2dtQ0PJaGj/fX29YmK6YmLlc3N9SUngcXGmdL7+AAAAE3RSTlMAWsxRq8C9XQOlmWbh21SflrGuCL+ygQAAAERJREFUeF5NyEUSgDAAwMBUoLhVcf7/SoaeyGkngNBSK6CqfYjBNtDe+5czFFtWKumurKf/PeOy1gFGf8TTTgBilouCF+lbBVAdEWw6AAAAAElFTkSuQmCC") no-repeat center; }
-
-.orangedot {
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAoklEQVR42mNggAINDY0odVWN1UD6DIhWVlMLZEACzMrKyksLvfX+b8w0/H+m3ARMZ3no/ldVVZ0JMyGtKlD//+cuMwxc5K39X0VFJZYBaPSBwyVmWBXtLzT+r6amthdk0sN7DeZYFV2vMQOZdJs4k0B2FvvoYVWU7an3X05OLgTseKDq+SDfbcuG+G5ztjHMd9OQgwESTurqG0HhBJRchxxOALJRiFeLGuZnAAAAAElFTkSuQmCC") no-repeat center; }
-
-.bluedot {
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAp0lEQVR42mNggAINDY0oVXWV1UD6DIjWVFMLZEACzKqqqksNw0v+WzTs+G876SqYNgjK/a+mpjYTZkKaSWz9f6fV/zGwQXj5fxUVlVgGVXXVA7Y9p7Aqsu48/l9dXX0vyKSH9nOfYVVkN/P+f6BTbhNnEshOw4gyrIqMQvL/KyoqhoAdD/TFfLDvmveCfWfVtAvsO6Ap05CDARxOQMGNoHACalqHHE4AyV+QhNXOr1MAAAAASUVORK5CYII=") no-repeat center; }
+input[type=button]:focus {
+    background-color: rgba(0, 200, 0, 0.3) !important;
+}
 
 input[type=button].even {
-  @extends: input[type=button];
-  background-color: #BDA27E; }
+    @extends : input[type=button];
+
+    background-color: #BDA27E;
+}
 
 input[type=button].even.selected {
-  @extends: input[type=button];
-  background-color: #695A46;
-  color: black; }
+    @extends : input[type=button];
+
+    background-color: #695A46;
+    color: black;
+}
 
 input[type=button].odd {
-  @extends: input[type=button];
-  background-color: #E8DAC6; }
+    @extends : input[type=button];
+
+    background-color: #E8DAC6;
+}
 
 input[type=button].odd.selected {
-  @extends: input[type=button];
-  background-color: #F6F0E8;
-  color: black; }
+    @extends : input[type=button];
+
+    background-color: #F6F0E8;
+    color: black;
+}
 
 input[type=radio] + span {
-  font-size: 50px;
-  color: black; }
+    font-size: 50px;
+    color: black;
+}
 
 /*# sourceMappingURL=main.css.map */
