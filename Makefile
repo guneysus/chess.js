@@ -16,6 +16,6 @@ live:
 deploy: prod
 	@cd public/ && \
 		git add . --all; \
-		git commit -m "`date`"; \
-		git push
+		git commit -m "`date`"
+
 .PHONY: default run prod watch live deploy
