@@ -5,8 +5,8 @@
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <title>Chess.js with ES6</title>
-    <script src="/chess.js/vendor.js"></script>
-    <script src="/chess.js/app.js"></script>
+    <script src="/vendor.js"></script>
+    <script src="/app.js"></script>
     <link rel="stylesheet" href="css/main.css">
 
 </head>
@@ -15,14 +15,14 @@
     <div id="wrapper">
         <div id="board">
             <div id="column0">
-                <input type="button" id="a8" class="number odd">
-                <input type="button" id="a7" class="number even">
-                <input type="button" id="a6" class="number odd">
-                <input type="button" id="a5" class="number even">
-                <input type="button" id="a4" class="number odd">
-                <input type="button" id="a3" class="number even">
-                <input type="button" id="a2" class="number odd">
-                <input type="button" id="a1" class="number even">
+                <div data-row="8"><input type="button" id="a8" class="number odd"></div>
+                <div data-row="7"><input type="button" id="a7" class="number even"></div>
+                <div data-row="6"><input type="button" id="a6" class="number odd"></div>
+                <div data-row="5"><input type="button" id="a5" class="number even"></div>
+                <div data-row="4"><input type="button" id="a4" class="number odd"></div>
+                <div data-row="3"><input type="button" id="a3" class="number even"></div>
+                <div data-row="2"><input type="button" id="a2" class="number odd"></div>
+                <div data-row="1"><input type="button" id="a1" class="number even"></div>
             </div>
             <div id="column1">
                 <input type="button" id="b8" class="number even">
@@ -85,14 +85,14 @@
                 <input type="button" id="g1" class="number even">
             </div>
             <div id="column7">
-                <input type="button" id="h8" class="number even">
-                <input type="button" id="h7" class="number odd">
-                <input type="button" id="h6" class="number even">
-                <input type="button" id="h5" class="number odd">
-                <input type="button" id="h4" class="number even">
-                <input type="button" id="h3" class="number odd">
-                <input type="button" id="h2" class="number even">
-                <input type="button" id="h1" class="number odd">
+                <div data-row="8"><input type="button" id="h8" class="number even"></div>  
+                <div data-row="7"><input type="button" id="h7" class="number odd"></div>
+                <div data-row="6"><input type="button" id="h6" class="number even"></div>
+                <div data-row="5"><input type="button" id="h5" class="number odd"></div>
+                <div data-row="4"><input type="button" id="h4" class="number even"></div>
+                <div data-row="3"><input type="button" id="h3" class="number odd"></div>
+                <div data-row="2"><input type="button" id="h2" class="number even"></div>
+                <div data-row="1"><input type="button" id="h1" class="number odd"></div>
             </div>
         </div>
     </div>
